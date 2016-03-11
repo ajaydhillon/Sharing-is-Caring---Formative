@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<title>Equality</title>
+
+		<link rel="stylesheet" href="css/normalize.css">
+		<link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:400,300,700,900' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/style.css">
+        
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
+        
+        <link rel="stylesheet" href="css/animate.css">
+        
+        <!-- LOAD JS LIBRARIES -->
+        <script src="js/lib/jquery.min.js"></script>
+        <script src="js/lib/greensock/TweenMax.min.js"></script>
+
+        <script src="scrollmagic/uncompressed/ScrollMagic.js"></script>
+		<script src="scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>
+        <script src="scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+        
+        <title>Equality</title>
+	
+	</head>
+
+	<body>
+                    <div id="animation"/> 
+
+		<section id="one" class="full">
+
+			<div id="logo">
+				<img src="images/YingYang.png" alt="Describe this image">
+			</div>
+
+		</section>
+        
+
+		<section class="content">
+            
+            <div class="element1">
+            <h1 class="animated infinite bounce" id="title">Equality</h1>
+            </div>
+
+			<h3>What is equality and diversity?</h3>
+
+			<p><em>Equality is ensuring individuals or groups of individuals are treated fairly and equally and no less favourably, specific to their needs, including areas of race, gender, disability, religion or belief, sexual orientation and age. </em></p>
+            
+            <p><em>The concept of diversity encompasses acceptance and respect. 
+It means understanding that each individual is unique, 
+and recognising our individual differences.  These can be along 
+the dimensions of race, ethnicity, gender, sexual orientation, socio-economic status, age, physical abilities, religious beliefs, 
+political beliefs, or other ideologies.  It is the exploration 
+                of these differences in a safe, positive, and nurturing environment.</em></p>
+
+
+		</section>
+
+	<section id="two" class="full">
+
+        <p>Eba</p>
+        <p>Eba, 14, Black American</p>
+        <p>I am a victim of racial discrimination</p>
+		</section>
+        
+
+		<section id="three" class="full">
+		</section>
+
+		<section class="content">
+            
+            			<p>UK legislation requires public authorities to promote equality in everything that they do, also making sure that other organisations meet their legal duties to promote equality while also doing so themselves.</p>
+
+			<h3>But do really believe that they follow this legislation?</h3>
+            
+
+            <div class="element2">
+            <h2 class="animated FadeOut" id="Debatetitle">Have your say!</h2>
+            </div>
+
+			<p>Based on your experiences you can share your thoughts. Below you will find various debates that you may have an interest in </p>
+		</section>
+
+		<section id="four" class="full">
+		</section>
+
+
+
+        <script>
+        			
+			$(function() 
+			{
+				// WRITE YOUR CODE BETWEEN HERE
+				//summon scroll magic 
+				var animationcontroller = new ScrollMagic.Controller()
+                
+				var pinOptions = {}
+
+				//let's define the element that will trigger our drone animation
+				pinOptions.triggerElement = '#animation'
+
+				//define the animation duration (in pixels)
+				pinOptions.duration = 450 
+                
+                pinOptions.triggerHook = 0
+
+				//create a new scroll magic scene
+				var scene = new ScrollMagic.Scene (pinOptions)
+
+				//we pin #drone1 to the scene
+				scene.setPin('#logo', {pushFollowers: false})
+            
+                //use a Tween, see https://greensock.com/tweenmax
+                var tweenOptions = {}
+                tweenOptions.scale = 0.2 // 1 is normal size 
+                tweenOptions.rotation = -360
+                tweenOptions.x = '-100%'
+                tweenOptions.opacity = 0 // 0 = transparent, 1 = opaque
+                
+                scene .setTween('#logo', tweenOptions)
+                
+
+				//add some visual cues to our scene
+				//scene.addIndicators()
+
+				//tell the controller this scene exists!
+				scene.addTo(animationcontroller)
+				// AND HERE
+			})
+        
+        
+        
+        
+        
+        
+        
+        </script>
+	</body>
+</html>
